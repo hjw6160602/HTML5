@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>LVTemplate模块化文档</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">LVTemplate模块化文档</h1>
+
+<h2 id="toc_1">一、引言</h2>
+
+<p>为了让运营能够灵活控制首页、各频道页的内容排版与展示. 我们要做到首页、各频道页可以像搭积木一样配置前端的内容展示, 主要是元素布局. 我们的重心也就是 <code>内容</code> 和 <code>布局</code> 上.</p>
+
+<p>对于内容而言, 就是我们在首页、各频道页看到的不同<code>模块</code>. 每个<code>模块</code>展示着不同的内容以及承载着某些运营&quot;使命&quot;.</p>
+
+<p>比如首页, 有banner信息(活动推广、广告投放等)、各频道入口模块(用户分流导向)、热门目的地模块(产品推荐)等. </p>
+
+<p>我们要做到的就是抽象出各个模块, 根据后台下发的配置, 对应展示前端的模块样式选择及布局排版.</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/fb9762c1c0725e93f25dfcd83d967350c0137217/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_1.png" alt=""></p>
+
+<h2 id="toc_2">二、模块化框架设计</h2>
+
+<p>引言中我们已经明确了什么是<code>模块</code>, 那么接下来就要知晓如何达到<code>各模块像搭积木一样布局</code>的目的.</p>
+
+<h3 id="toc_3">2.1 容器选择</h3>
+
+<p>首先, 我们要确定承载模块的容器视图, 常见容器我们会想到以下四种:</p>
+
+<table>
+<thead>
+<tr>
+<th>容器视图</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>UIView</td>
+<td>UIView作为所有容器的基类, 就是一块白板拥有无限可能, 但也需要更多的代码实现</td>
+<td>一般适用于子视图数量明确且大小不超过屏幕的情况</td>
+</tr>
+<tr>
+<td>UIScrollView</td>
+<td>UIScrollView相比于前者, 支持水平、垂直方向滑动</td>
+<td>适用于内容会超过屏幕大小、需要滑动的情况</td>
+</tr>
+<tr>
+<td>UITableView</td>
+<td>继承自UIScrollView, 拥有元素复用机制以及悬浮Header、Footer等特性. 拥有一定限制的元素排版布局机制</td>
+<td>适用于元素内容存在动态变化、特定排版布局要求、以及数据驱动内容展示的情况</td>
+</tr>
+<tr>
+<td>UICollectionView</td>
+<td>继承自UIScrollView, 同样拥有元素复用机制以及悬浮特性(iOS9开始支持悬浮). 拥有超级灵活的元素布局机制动画效果. 相比于前者, 有自己的布局信息类UICollectionViewLayout, 通过实现自己的布局类可以实现瀑布流等各种布局. 甚至可以说, 可以做到TableView能做到所有事情. 此外, 对元素的动画实现也更加容易.</td>
+<td>除了满足TableView的使用场景, 此外适用对布局有更高要求的场景</td>
+</tr>
+</tbody>
+</table>
+
+<p>综上, 考虑到我们首页、各频道页的模块内容, UICollectionView或UITableView都可以满足我们容器这一角色. 通过比较, 我们也可以发现 UICollectionView 布局的灵活性给了我们模块化更大的发挥空间与拓展性. 所以它是我们的最佳选择.</p>
+
+<h3 id="toc_4">2.2 模块于容器中的角色</h3>
+
+<p>容器定好后, 我们要把模块放到容器中, 便需要搞清楚怎么放置, 充当什么角色; 以及后台下发的模块数据如何与容器布局相对应. 首先, 先放上一张CollectionView布局结构图</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.2.a.png" alt=""></p>
+
+<h3 id="toc_5">2.2.1 模块即Section</h3>
+
+<p>如图2.2.a所示, UICollectionView的布局实际上是由Section为单位拼凑而成的, 每个Section独立且相互不影响. 这一特点与我们模块间业务功能独立相符合. 所以我们可以把<code>模块</code>定义为容器中一个<code>Section</code>.</p>
+
+<p>角色确认了还不够, 我们还得知道容器布局需要哪些信息. 回到图2.2.a, 可以看出每个Section需要知道以下信息:</p>
+
+<ol>
+<li>Cell个数, 及Cell的坐落位置、大小、复用样式</li>
+<li>是否有Header或者Footer, 以及其大小和对应样式. </li>
+<li>每个Section的四周间隔 SectionInset</li>
+<li>行间距、以及每行元素之间的间隔</li>
+</ol>
+
+<p>故无论接口下发数据如何, 我们的目的是把数据转换为容器可以理解的布局信息. 对于VC来说, 并不关心具体的接口响应数据模型, 只需把容器感兴趣的布局信息获取方法暴露给容器VC即可. 抽象SectionDataSource协议的目的便是如此. </p>
+
+<p>遵循并实现该协议的对象来负责接口数据管理以及转换逻辑. 并且根据不同的布局需求, 我们可以实现不同的SectionData类型.</p>
+
+<div><pre><code class="language-none">typedef NSObject&lt;LVTSectionDataSource&gt; LVTSectionData;
+
+@protocol LVTSectionDataSource &lt;NSObject&gt;
+
+- (instancetype)initWithListModel:(LVTemplateListModel *)listModel;
+/** 模块是否有Header */
+- (BOOL)hasHeader;
+/** 元素数量 */
+- (NSUInteger)numOfItems;
+/** 对应模块四周Inset */
+- (UIEdgeInsets)sectionInset;
+/** 两个元素之间的间隔 */
+- (CGFloat)itemSpace;
+/** 整个模块的model */
+- (LVTemplateListModel *)templateModel;
+/** 该模块中的元素类型. 用于创建Cell */
+- (NSString *)elementCode;
+/** 模块中某个位置 对应的模型. 不限死, 可创建不同的DataSource, 比如智能货架有自己的DataSource */
+- (LVTCellModel *)itemModelAtIndex:(NSUInteger)index;
+
+@end</code></pre></div>
+
+<p>容器VC通过SectionData的<code>翻译</code>, 知道了某个位置上该创建什么样的模块复用组件以及如何布局. 如下图 2.2.1.a </p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.2.1.a.png" alt=""></p>
+
+<h3 id="toc_6">2.2.2 模块组件数据模型</h3>
+
+<p>此外, 考虑到不同类型复用组件展示内容不同, 即用于填充数据的模型类型不一, 我们还需对所有充当组件数据模型的对象进行约束, 使它们能提供访问复用组件的大小/高度的布局信息. 协议如下:</p>
+
+<div><pre><code class="language-none">typedef NSObject&lt;LVTCellModelProtocol&gt; LVTCellModel;
+
+@protocol LVTCellModelProtocol &lt;NSObject&gt;
+
+/** Cell内容是否折叠 */
+@property (nonatomic, assign) BOOL isFolded;
+/** Cell内容完全展示时的大小 */
+@property (nonatomic, assign) CGSize itemSize;
+/** Cell内容折叠时的大小 */
+@property (nonatomic, assign) CGSize foldedItemSize;
+
+@end</code></pre></div>
+
+<p>举个&#39;栗子&#39;(图2.2.b), 当CollectionView问其代理, 即容器VC, 要某个具体位置的复用组件模型, 用于填充数据、或者获取大小/高度时, VC把位置信息Scetion传给ViewModel拿到对应的SectionData对象, 又使用该Section中的row/item位置获取到复用组件的数据模型.</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.2.b.png" alt=""></p>
+
+<p>对于CollectionView、TableView来说, 为了计算ContentSize以及滑动过程中确定元素布局位置, 会频繁调用获取元素大小(高度)的代理方法. 而我们往往会在其中进行文本展示的高度计算, 如果不对计算结果进行缓存, 如此频繁的CPU运算就可能影响到主线的UI界面事件. 所以为了避免这种情况的发生, 我们可在模型里缓存大小/高度数据, 以及异步计算大小/高度信息.</p>
+
+<h3 id="toc_7">2.3 模块与容器解耦</h3>
+
+<h4 id="toc_8">2.3.1 &quot;堆积木&quot;的故事</h4>
+
+<p>前边我们解决了<code>选择何种容器</code>和<code>模块数据如何用于布局</code>的问题, 看似小伙伴们已经可以开始结对编程了. </p>
+
+<p>A、B童鞋分别写好了CellA、CellB</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.1.a.png" alt=""></p>
+
+<p>于是两位同学分别往容器VC(<a href="https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457">Container Controller</a>)中添加相应的代码. 应用跑起来一切相安无事.</p>
+
+<p>某日, 某产品提出新的XX需求, C、D同学又分别往公共的容器VC中添加CellC、CellD的 <code>复用模块注册</code>、<code>设置填充Cell的不同类型Model</code>、<code>Cell自身能做到却又丢到VC中处理的事件逻辑</code>等等代码.</p>
+
+<p>终于某年某月的某某日, 某某某同学望着这堆牵一发而动全身的陈年代码, 默默的敲下了<code>rm -rf /</code>, 逃.</p>
+
+<h4 id="toc_9">2.3.2 解耦</h4>
+
+<p>看完上述故事, 我们会发现, 如果按照这个剧情发展, 持有容器的VC里边堆积越来越多与容器布局无关的代码. 比如, 我们每加入一个模块Cell, 都要为其注册复用ID、为其传特定的数据Model、事件处理等等. </p>
+
+<p>这些都不是我们所期望的, 我们期望的是在开发模块时, 可以不去关注容器的存在, 只需专注于模块内的业务逻辑. 而容器只需要根据SectionData提供的布局信息, 创建对应模块并将其安置在指定的位置即可.</p>
+
+<p>所以, 我们需要把模块与容器VC之间进行解耦, 让容器专心做好布局的事情(Container Controller), 模块处理好自身的内容展示以及事件处理(当做一个<a href="https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457">Content Controller</a>).</p>
+
+<h5 id="toc_10">2.3.2.1 泛化模块复用组件的具体类型</h5>
+
+<p>VC中不去维护某个SectionData(对应具体模块)中的元素与具体复用组件(Cell、Header、Footer)的对应关系. 而是交由ClassMapper去管理所有模块复用组件的映射信息, 根据模块Model的特定Key返回与之对应一个复用组件的类对象.</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.2.a.png" alt=""></p>
+
+<p>前边, 我们在提Section的时候说到容器除了需要知道哪个位置对应什么复用组件类型, 还需要知道复用组件的唯一标识以及特定位置组件的大小. 所以, 我们可以给复用组件定义一个协议来泛化其具体类型.</p>
+
+<div><pre><code class="language-none">typedef Class&lt;LVTReuseItemProtocol&gt; LVTemplateClass;
+typedef UICollectionViewCell&lt;LVTReuseItemProtocol&gt; LVTemplateCell;
+typedef UICollectionReusableView&lt;LVTReuseItemProtocol&gt; LVTemplateReuseView;
+
+@protocol LVTReuseItemProtocol &lt;NSObject&gt;
+
+/** 可复用组件的ID. 默认实现为 className_ID */
++ (NSString *)templateIdentifier;
+
+/**
+ 根据Model计算复用组件的大小. 若高度固定, 则直接返回(容器宽度, 固定高度)即可
+
+ @param model id&lt;LVTCellModelProtocol&gt; 遵循该协议的模型对象
+ @param size 容器CollectionView的大小, 用于均分计算
+ */
++ (CGSize)templateSizeWithModel:(LVTCellModel *)model andContainerSize:(CGSize)size;
+
+/**
+ 根据传入Model配置组件内容. 会持有传入model. 子类实现需先调用super方法.
+*/
+- (void)configItemWithModel:(id&lt;LVTCellModelProtocol&gt;)model;
+
+@end</code></pre></div>
+
+<p>于是 图2.3.2.a可更新为下图, ClassMapper返回的对象即遵循该协议的类对象</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.2.b.png" alt=""></p>
+
+<p>疑问: 复用组件(Cell、Header、Footer)的大小计算为什么要放在类方法里? </p>
+
+<ol>
+<li>视图才知道每个模型中的数据该如何展示以及排版, 所以肯定知道展示该数据的高度. 而Model只是一个数据储存单元, 不知道也不该知道视图的布局信息.</li>
+<li>UICollectionView以及UITableView都是UIScrollView的子类, 他们在创建复用组件前, 会先问有多少个Section, 多少个Cell, 然后把所有组件的高度加起来求得ContentSize, 所以不能是实例方法</li>
+</ol>
+
+<h5 id="toc_11">2.3.2.2 模块与模块、模块与VC之间的通信</h5>
+
+<p>对于模块之间、模块与VC间的通信来说, 其实就是一个问题. 那就是不同对象之间如何进行通信交互. iOS常见的对象间通信方式有以下几种:</p>
+
+<ol>
+<li>Target-Action模式</li>
+<li>代理模式: delegate、回调Block</li>
+<li>观察者模式: Notification、共享对象</li>
+</ol>
+
+<p>考虑到每个模块与VC都有自己独特的事件. 如图2.3.2.c</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.2.c.png" alt=""></p>
+
+<p>不同模块和容器VC感兴趣的事件也不尽相同. 比如:</p>
+
+<ol>
+<li><p>VC与模块间: </p>
+
+<ul>
+<li>容器VC有权限给组件进行布局, 而复用组件没有, 所以容器VC会想得知某个复用组件的高度是否有变化. </li>
+<li>容器代理(此处为VC)知道某个复用什么时候将展示在屏幕中, 而复用组件自身不知道. 所以某些复用组件, 比如banner, 希望知道自己什么时候将要展示, 以便开始轮播自己的内容</li>
+</ul></li>
+<li><p>模块之间 </p>
+
+<ul>
+<li>某个类型的Header中包含某个按钮, 该按钮点击后, 同Section内的Cell都需要改变展示内容. 而因为按钮的Target为Header, 所以同Section中的Cell都希望得知什么时候需要改变展示内容.</li>
+</ul></li>
+</ol>
+
+<p>就前两种通信方式来说, Target-Action和Delegate仅适用于1对于1的通信. 比如当前VC容器发生viewWillDisappear事件, 假设关心该事件的所有组件此时要执行停止定时器的操作, 那么用前两种方式来实现会有诸多不便之处.</p>
+
+<p>而观察者模式显然满足我们的需求, 首先可以做到一对多通讯; 其次可以灵活添加观察者对象并随时注销; 最重要的一点, 可以解除模块间与模块和VC间的耦合. 一如我们开始所提及的, 每个模块以及VC有着不同的关注事件, 而且涉及容器的复用机制, 并非需要时刻监听某些事件的发生</p>
+
+<p>考虑到NSNotification的传参可读性比较差, 需要定义一堆不同的参数Key或大量注释. 所以不如基于ReactiveCocoa来实现一个共享事件中心对象. </p>
+
+<p><code>NSObject+RACSelectorSignal.h</code>类别通过isa-swizzling等方式实现了创建一个<code>某对象特定方法被触发</code>的RACSignal信号的方法. 同一个对象的同一个方法选择器, 至多创建一个信号. 我们关注的方法返回值、各个传参会包装到RACTuple中传递给信号订阅者.</p>
+
+<p>所以我们要做的就只有3件事: </p>
+
+<ol>
+<li><p>把各个模块以及VC关注的事件添加到事件中心上, 事件中心实现这些申明事件的空方法. 如图2.3.2.d</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.2.d.png" alt=""></p></li>
+<li><p>各个模块以及VC通过事件中心订阅它们关心的事件. 如图2.3.2.e</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.2.e.png" alt=""></p></li>
+<li><p>各模块以及VC原方法中调用事件中心的对应事件, 如图2.3.2.f, 比如在容器VC的viewWillDisapper:方法实现内调用事件中心的对应方法. 那么当VC的生命周期事件触发时, 所有订阅者, 即感兴趣的模块, 都可以接收到特定消息, 并执行相关操作</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.2.f.png" alt=""></p></li>
+</ol>
+
+<p>至于事件中心的具体类型, 容器VC以及各模块并不关注, 我们照旧为其定义一个协议.</p>
+
+<div><pre><code class="language-none">typedef NSObject&lt;LVTEventCenterProtocol&gt; LVTEventCenter;
+
+@protocol LVTEventCenterProtocol &lt;NSObject&gt;
+
+- (void)lvtEventViewWillAppear;
+- (void)lvtEventViewDidAppear;
+- (void)lvtEventViewWillDisappear;
+- (void)lvtEventViewDidDisappear;
+
+/** 某个Cell被点击了 */
+- (void)lvtEventDidSelectCell:(UICollectionViewCell *)cell;
+/** 某个Cell将要展示(滑入容器可视范围) */
+- (void)lvtEventWillDisplayCell:(UICollectionViewCell *)cell;
+/** 某个Cell已经停止展示(滑出容器可视范围) */
+- (void)lvtEventDidEndDisplayingCell:(UICollectionViewCell *)cell;
+/** Cell自身&quot;高度&quot;发生变化时(比如 折叠、内容增加等) */
+- (void)lvtEventCellHeightDidChange:(UICollectionViewCell *)cell;
+/** Cell自身发起请求活动 */
+- (void)lvtEventCell:(UICollectionViewCell *)cell startActivityWithStyle:(LVIndicatorStyle)style;
+/** Cell停止/完成请求活动 */
+- (void)lvtEventCellStopActivity:(UICollectionViewCell *)cell;
+
+@end</code></pre></div>
+
+<p>最后, 还要注意订阅的移除取消. 使用<code>takeUntil:</code>限制该信号的订阅的生命周期. </p>
+
+<div><pre><code class="language-none">// 比如: 在模块复用组件中订阅事件信号
+- (void)registerEventCenterObserver {
+    // 自主选择关注的事件进行监听
+    
+    // 创建移除信号.
+    // 1. 当前注册方法再次调用时需把上一次的注销掉.
+    // 2. 复用组件要被销毁时. 停止订阅
+    RACSignal *endObservingSignal =
+    [[self rac_signalForSelector:_cmd] merge:[self rac_willDeallocSignal]];
+    
+    [[self.eventCenter rac_signalForSelector:@selector(lvtEventDidSelectCell:)] subscribeNext:^(RACTuple *params) {
+        @strongify(self);
+        RACTupleUnpack(LVTemplateCell *cell) = params;
+        if (cell == self) { // 如果点击的是自己
+            LVLog(@&quot;你点击了cell(%@). 该消息每次点击应只打印1次. 多次说明重复注册了!&quot;, cell);
+            [self handleSelfDidSelect];
+        }
+    }];
+    ..
+}</code></pre></div>
+
+<p>为了防止忘记添加<code>takeUntil</code>或使用RACDisposable注销订阅, 定义一个创建信号的便捷宏</p>
+
+<div><pre><code class="language-none">#define LVTRegisterEventSignal(sel) _LVTRegisterEventSignal(@selector(sel))
+#define _LVTRegisterEventSignal(SEL) [[self.eventCenter rac_signalForSelector:SEL] takeUntil:[[self rac_signalForSelector:_cmd] merge:[self rac_willDeallocSignal]]]</code></pre></div>
+
+<h4 id="toc_12">2.3.3 解耦后的关系图</h4>
+
+<p>至此, 容器VC与模块间的解耦就算完成了. </p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.3.3.a.png" alt=""></p>
+
+<h3 id="toc_13">2.4 时序图</h3>
+
+<p>基于MVVM模式的首屏UI刷新时序图</p>
+
+<p><img src="http://lvioscode.com/ios_documents/documents/raw/7c3bba9a031af6b55e9acc9ee6c150458ef9c454/%E7%9F%A5%E8%AF%86%E5%BA%93/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/images/template_2.4.a.png" alt="">   </p>
+
+
+
+
+</body>
+
+</html>

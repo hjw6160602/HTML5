@@ -1,0 +1,107 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background: url("../images/apple.jpg");
+    /*背景图片会跟随屏幕的变化而变化*/
+    background-size: cover;
+}
+
+ul{
+    list-style: none;
+}
+
+#header{
+  background: rgb(241,241,241);
+  height: 28px;
+  opacity: 0.9;
+  box-shadow: 0px 0.5px 20px black;
+  line-height: 28px;
+}
+
+#header .header-left{
+  float: left;
+}
+
+#header .header-left li{
+  float: left;
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#header .header-left li.apple{
+  margin-top: 5px;
+}
+
+#header .header-right{
+     float: right;
+}
+
+#header .header-right li{
+    margin-left: 6px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+#body .file{
+    width: 80px;
+    margin-left: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#body .file:hover{
+    cursor: pointer;
+}
+
+#body .file img{
+    width: 60px;
+    height: 60px;
+}
+
+#body .file p{
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+#footer{
+   height: 70px;
+   width: 100%;
+   position: absolute;
+   bottom: 0px;
+}
+
+#footer .dock{
+    background: url("../images/dock_bg.png");
+    width: 70%;
+    height: 100%;
+    margin: 0px auto;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    text-align: center;
+    line-height: 60px;
+}
+
+#footer .dock img{
+    width: 50px;
+    height: 50px;
+    margin: 0px 6px;
+}
+
+#footer .dock ul{
+    display: inline-block;
+}
+
+#footer .dock ul li{
+    display: inline-block;
+    -webkit-transition:0.25s linear;
+}
+
+#footer .dock ul li:hover{
+    -webkit-transform-origin: center bottom ;
+    -webkit-transform:scale(1.3);
+}

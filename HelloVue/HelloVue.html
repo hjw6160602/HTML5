@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+	<title>Hello Vue!</title>
+</head>
+
+<body>
+	<div id = "app"> 
+		<!-- v-model是一个语法糖
+		本质上就是v-bind:value 和 v-on:input -->
+		<input type="text" v-model="msg">
+		<!-- <input type="text" v-bind:value="msg" v-on:input="valueChange"> -->
+		<h3>{{msg}}</h3>
+		<ul>
+			<li v-for='(item,index) in musicData' @click='clickHandler' :class>
+				<h2>{{item.id}} - 歌名{{item.name}}</h2>
+				<p>歌手：{{}}</p>
+			</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
