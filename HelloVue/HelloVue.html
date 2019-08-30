@@ -3,6 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Hello Vue!</title>
+	<style>
+	    ul li.active{
+
+        }
+	</style>
 </head>
 
 <body>
@@ -12,14 +17,14 @@
 		<input type="text" v-model="msg">
 		<!-- <input type="text" v-bind:value="msg" v-on:input="valueChange"> -->
 		<h3>{{msg}}</h3>
+		<audio src='getCurrentSongSrc' autoplay controls></audio>
 		<ul>
-			<li v-for='(item,index) in musicData' @click='clickHandler' :class>
-				<h2>{{item.id}} - 歌名{{item.name}}</h2>
-				<p>歌手：{{}}</p>
+			<li v-for='(item,index) in musicData' @click='clickHandler(index)）' :class="{active:currentIndex=Index}">
+				<h2>{{item.id}} - 歌名：{{item.name}}</h2>
+				<p>歌手：{{item.songSrc}}</p>
 			</li>
 		</ul>
 	</div>
-	
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>

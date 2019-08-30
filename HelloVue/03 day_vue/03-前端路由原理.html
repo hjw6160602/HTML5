@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-前端路由原理</title>
+</head>
+<body>
+	<a href="#/login" id="">登录页面</a>
+	<a href="#/register" id="">注册页面</a>
+	<div id="app"></div>
+	<script type="text/javascript">
+		var oDiv = document.getElementById('app')
+		window.onhashchange = function(){
+			console.log(location.hash);
+			switch(location.hash){
+				case "#/login":
+					oDiv.innerHTML = '<h2>我是登录页面</h2>';
+					break;
+				case "#/register":
+					oDiv.innerHTML = '<h2>我是注册页面</h2>';
+					break;
+				default:
+					break;
+			}
+		}
+	</script>
+</body>	
+</html>

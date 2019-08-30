@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-vue-router路由命名</title>
+</head>
+<body>
+	<div id="app"></div>
+	<!-- 1.引入vue的模块 -->
+	<script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+	<!-- 2. 引入vue-router模块 -->
+	<script type="text/javascript" src="../node_modules/vue-router/dist/vue-router.js"></script>
+	<script type="text/javascript">
+		// Vue.use(VueRouter)
+		// 创建路由对象
+		var Login = {
+			template:'<div>我是登录页面</div>'
+		}
+
+		var Register = {
+			template:'<div>我是注册页面</div>'
+		}
+
+		var router = new VueRouter({
+			// 配置路由对象(注意这里不是router而是route)
+			routes:[
+			{
+				path:"/login",
+				name:'login',
+				component:Login
+			},
+			{
+				path:"/register",
+				name:'register',
+				component:Register
+			}]
+		}); 
+		// 引入vue-router模块 给咱们跑出来两个全局组件
+		// router-link 相当于a标签 to竖向相当于href
+		// router-view 是路由匹配组件的出口
+		var App = {
+			// name后面的单引号需要使用\符号来转移
+			template:'\
+			<div>\
+				<router-link :to="{name:\'login\'}">登录界面</router-link>\
+				<router-link :to="{name:\'register\'}">注册页面</router-link>\
+				<router-view></router-view>\
+			</div>'
+		}
+
+		new Vue({
+			el:"#app",
+			data(){
+				return{
+
+				}
+			},
+			components:{
+				App
+			}, 
+			// 交给vue实例化对象去管理
+			router:router,
+			template:'<App/>'
+		})
+	</script>
+</body>
+</html>
